@@ -17,7 +17,7 @@ public class Main extends JavaPlugin {
 	int timer;
 	int count;
 
-	public main() {
+	public Main() {
 		super();
 	}
 
@@ -45,7 +45,7 @@ public class Main extends JavaPlugin {
 			String[] messages = s.split(",,");
 			int id = Integer.parseInt(messages[0]);
 			String message = messages[1];
-			this.messages.add(new messages(message, id));
+			this.messages.add(new Messages(message, id));
 		}
 
 		System.out.println("<AutoMessage> Loaded " + this.count + " messages!");
@@ -54,15 +54,15 @@ public class Main extends JavaPlugin {
 	public void repeatingTask() {
 		this.task = (new BukkitRunnable() {
 			public void run() {
-				int messageSize = main.this.messages.size();
+				int messageSize = Main.this.messages.size();
 				Random rand = new Random();
 				int randomNumber = rand.nextInt(messageSize);
-				Iterator var5 = main.this.messages.iterator();
+				Iterator var5 = Main.this.messages.iterator();
 
 				while(var5.hasNext()) {
 					messages m = (messages)var5.next();
 					if (m.id == randomNumber) {
-						Bukkit.broadcastMessage(main.this.Colour(m.message));
+						Bukkit.broadcastMessage(Main.this.Colour(m.message));
 						return;
 					}
 				}
