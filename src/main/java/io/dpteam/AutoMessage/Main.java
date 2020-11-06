@@ -12,7 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 public class Main extends JavaPlugin {
-	public List messages = new ArrayList();
+	public List Messages = new ArrayList();
 	public BukkitTask task;
 	int timer;
 	int count;
@@ -33,7 +33,7 @@ public class Main extends JavaPlugin {
 
 	public void onDisable() {
 		System.out.println("AutoMessage Disabled");
-		this.messages.clear();
+		this.Messages.clear();
 	}
 
 	public void loadMessages() {
@@ -42,10 +42,10 @@ public class Main extends JavaPlugin {
 
 		for(Iterator var3 = c.getStringList("messages").iterator(); var3.hasNext(); ++this.count) {
 			String s = (String)var3.next();
-			String[] messages = s.split(",,");
-			int id = Integer.parseInt(messages[0]);
-			String message = messages[1];
-			this.messages.add(new Messages(message, id));
+			String[] Messages = s.split(",,");
+			int id = Integer.parseInt(Messages[0]);
+			String message = Messages[1];
+			this.Messages.add(new Messages(message, id));
 		}
 
 		System.out.println("<AutoMessage> Loaded " + this.count + " messages!");
@@ -54,13 +54,13 @@ public class Main extends JavaPlugin {
 	public void repeatingTask() {
 		this.task = (new BukkitRunnable() {
 			public void run() {
-				int messageSize = Main.this.messages.size();
+				int messageSize = Main.this.Messages.size();
 				Random rand = new Random();
 				int randomNumber = rand.nextInt(messageSize);
-				Iterator var5 = Main.this.messages.iterator();
+				Iterator var5 = Main.this.Messages.iterator();
 
 				while(var5.hasNext()) {
-					messages m = (messages)var5.next();
+					Messages m = (Messages)var5.next();
 					if (m.id == randomNumber) {
 						Bukkit.broadcastMessage(Main.this.Colour(m.message));
 						return;
