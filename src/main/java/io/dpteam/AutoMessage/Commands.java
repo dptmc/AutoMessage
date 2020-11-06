@@ -25,7 +25,7 @@ public class Commands implements CommandExecutor {
 				if (s.hasPermission("automessage.reload")) {
 					this.m.reloadConfig();
 					this.m.task.cancel();
-					this.m.messages.clear();
+					this.m.Messages.clear();
 					this.m.loadMessages();
 					this.m.repeatingTask();
 					s.sendMessage(ChatColor.GOLD + "AutoMessage: " + ChatColor.GREEN + "Reloaded config!");
