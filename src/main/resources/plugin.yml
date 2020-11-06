@@ -1,6 +1,9 @@
-name: PluginName
+name: AutoMessage
 version: @version@-@apiversion@
-description: An empty plugin for Spigot with Maven
-authors: [ DartPower, AnotherContributorName ]
-website: https://github.com/dptmc/DPT-PluginRepoTemplate
-main: io.dpteam.PluginName.Main
+description: AutoMessage
+authors: [ DartPower, Shawshark ]
+website: https://github.com/dptmc/AutoMessage
+main: io.dpteam.AutoMessage.Main
+
+commands:
+  automessage:

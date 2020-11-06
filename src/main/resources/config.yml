@@ -1,0 +1,8 @@
+# time in seconds.
+timer: 60
+
+# messages
+messages:
+- '0,,&1this is a coloured message'
+- '1,,&4another coloured message :>D'
+- '2,,&4and another'
